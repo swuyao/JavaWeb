@@ -2,9 +2,7 @@
 # 项目名称
 教学管理系统V1.0.0
 # 项目简介
-基于springboot和nginx的restful风格前后端分离系统
-	开发工具:idea
-		数据库：mysql
+基于springboot和nginx的restful风格前后端分离系统    开发工具:idea    数据库：mysql
 
 # 基本信息
 学号 222016321072029 
