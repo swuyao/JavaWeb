@@ -29,64 +29,81 @@
         WHERE day=#{day};
 
     </update>
-    <!--更新早起日-->
-    <update id="UpdateUp" parameterType="com.pjb.springbootjjwt.entity.Dayily">
+    <!--更新运动量-->
+    <update id="UpdateMovement" parameterType="com.pjb.springbootjjwt.entity.Dayily">
         UPDATE yc_dayily
-        set up=#{up}
+        set movement=#{movement}
         WHERE day=#{day};
 
     </update>
-    <!--更新早起日-->
-    <update id="UpdateUp" parameterType="com.pjb.springbootjjwt.entity.Dayily">
+    <!--更新游戏时间-->
+    <update id="UpdateGame" parameterType="com.pjb.springbootjjwt.entity.Dayily">
         UPDATE yc_dayily
-        set up=#{up}
+        set game=#{game}
         WHERE day=#{day};
 
     </update>
-    <!--更新早起日-->
-    <update id="UpdateUp" parameterType="com.pjb.springbootjjwt.entity.Dayily">
+    <!--更新谈恋爱的时间-->
+    <update id="UpLove" parameterType="com.pjb.springbootjjwt.entity.Dayily">
         UPDATE yc_dayily
-        set up=#{up}
+        set love=#{love}
         WHERE day=#{day};
 
     </update>
-    <!--更新早起日-->
-    <update id="UpdateUp" parameterType="com.pjb.springbootjjwt.entity.Dayily">
+    <!--更新实验室时间-->
+    <update id="UpWork" parameterType="com.pjb.springbootjjwt.entity.Dayily">
         UPDATE yc_dayily
-        set up=#{up}
+        set work=#{work}
         WHERE day=#{day};
 
     </update>
-    <!--更新早起日-->
-    <update id="UpdateUp" parameterType="com.pjb.springbootjjwt.entity.Dayily">
+    <!--更新抽烟数量-->
+    <update id="UpdateSmoke" parameterType="com.pjb.springbootjjwt.entity.Dayily">
         UPDATE yc_dayily
-        set up=#{up}
+        set smoke=#{smoke}
         WHERE day=#{day};
 
     </update>
-    <!--更新早起日-->
-    <update id="UpdateUp" parameterType="com.pjb.springbootjjwt.entity.Dayily">
+    <!--更新代码行数-->
+    <update id="UpdateDaima" parameterType="com.pjb.springbootjjwt.entity.Dayily">
         UPDATE yc_dayily
-        set up=#{up}
+        set daima=#{daima}
         WHERE day=#{day};
 
     </update>
-    <!--更新早起日-->
-    <update id="UpdateUp" parameterType="com.pjb.springbootjjwt.entity.Dayily">
+    <!--更新今日消费-->
+    <update id="UpdateMoney" parameterType="com.pjb.springbootjjwt.entity.Dayily">
         UPDATE yc_dayily
-        set up=#{up}
+        set money=#{money}
         WHERE day=#{day};
 
     </update>
-    <!--更新早起日-->
-    <update id="UpdateUp" parameterType="com.pjb.springbootjjwt.entity.Dayily">
+    <!--更新日记-->
+    <update id="UpdateDayily" parameterType="com.pjb.springbootjjwt.entity.Dayily">
         UPDATE yc_dayily
-        set up=#{up}
+        set diary=#{diary}
+        WHERE day=#{day};
+
+    </update>
+    <!--更新所有数据-->
+    <update id="Update" parameterType="com.pjb.springbootjjwt.entity.Dayily">
+        UPDATE yc_dayily
+        set diary=#{diary},up=#{up},money=#{money},daima=#{daima},smoke=#{smoke},work=#{work},
+        love=#{love},game=#{game},movement=#{movement},English=#{English},sleep=#{sleep}
         WHERE day=#{day};
 
     </update>
 
+    <select id="sum" resultType="Map">
+        SELECT sum(up),sum(sleep),sum(English),sum(movement),sum(game),sum(love),sum(work),sum(smoke),
+        sum(daima),sum(money)
+        FROM
+        yc_dayily;
+    </select>
 
+    <select id="ShowAllDiary" resultType="com.pjb.springbootjjwt.entity.Dayily">
+        SELECT diary,todaydate FROM yc_dayily;
+    </select>
 
 
 

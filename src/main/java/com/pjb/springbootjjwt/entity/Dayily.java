@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Date;
+
 /**
  * @author yc
  * @date 2018-07-08 20:43
@@ -23,6 +25,7 @@ public class Dayily {
     int smoke;
     int daima;
     int money;
+    Date todaydate;
     String diary;
 
 }

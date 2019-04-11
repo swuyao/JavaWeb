@@ -51,6 +51,11 @@ public class UserService {
          boolean result=userMapper.adduser(user);
         return result;
     };
+    public User findByUsernames(String username){
+        return userMapper.findByUsername(username);
+    }
+
+
 
 
 

@@ -53,13 +53,14 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                     throw new RuntimeException("无token，请重新登录");
                 }
                 // 获取 token 中的 stunumber
-                String stunumber;
+                String username;
                 try {
-                    stunumber = JWT.decode(token).getAudience().get(0);
+                    username = JWT.decode(token).getAudience().get(0);
+                    System.out.printf(username);
                 } catch (JWTDecodeException j) {
                     throw new RuntimeException("401");
                 }
-                User user = userService.findByStunumber(stunumber);
+                User user = userService.findByUsernames(username);
                 if (user == null) {
                     throw new RuntimeException("用户不存在，请重新登录");
                 }

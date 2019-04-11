@@ -41,7 +41,7 @@ public class UserApi {
             } else {
                 // String role=user.getRole();
                 String token = tokenService.getToken(userForBase);
-                userService.updatetoken(user.getId(),token);
+                userService.updatetoken(userForBase.getId(),token);
                 jsonObject.put("token", token);
                 jsonObject.put("user", userForBase);
                 //System.out.println(user.getRole());

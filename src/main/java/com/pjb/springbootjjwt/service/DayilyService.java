@@ -2,10 +2,12 @@ package com.pjb.springbootjjwt.service;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.pjb.springbootjjwt.entity.Dayily;
 import com.pjb.springbootjjwt.mapper.DayilyMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,33 +21,29 @@ public class DayilyService {
     @Autowired
     DayilyMapper dayilyMapper;
 
+    public Dayily ShowTodayData(){return dayilyMapper.ShowTodayData();};
+    public boolean UpdateUp(Integer up){return dayilyMapper.UpdateUp(up);};
+    public boolean UpdateSleep(Integer sleep){return dayilyMapper.UpdateSleep(sleep);};
 
-    public List<Notice> showNoticeByRole(String role){return noticeMapper.showNoticeByRole(role);};
+    public boolean UpdateEnalish( Integer English){return dayilyMapper.UpdateEnalish(English);};
+    public boolean UpdateMovement( Integer movement){return dayilyMapper.UpdateMovement(movement);};
+    public boolean UpdateGame( Integer game){return dayilyMapper.UpdateGame(game);};
+    public boolean UpdateLove( Integer love){return dayilyMapper.UpdateLove(love);};
+    public boolean UpdateWork( Integer work){return dayilyMapper.UpdateWork(work);};
+    public boolean UpdateSmoke( Integer smoke){return dayilyMapper.UpdateSmoke(smoke);};
+    public boolean UpdateDaima( Integer daima){return dayilyMapper.UpdateDaima(daima);};
+    public boolean UpdateMoney( Integer money){return dayilyMapper.UpdateMoney(money);};
+    public boolean UpdateDiary( String diary){return dayilyMapper.UpdateDiary(diary);};
 
-    public  Map<String, Object> findAllTitle(int pageNum, int pageSize) throws Exception{
 
-        Page page=PageHelper.startPage(pageNum, pageSize,true);
-        List<Notice> titlelist=noticeMapper.findAllTitle();
-        System.out.println(titlelist);
-        Map<String,Object> map=new HashMap<>();
-        map.put("code" ,0);
-        System.out.print(page.getTotal());
-        map.put("count", page.getTotal());
-        map.put("nowPage", pageNum);
-        map.put("data", titlelist);
-        return map;
 
+
+    public boolean Update(Dayily dayily)
+    {
+        return dayilyMapper.Update(dayily);
     }
-    public Notice findByTitle(String title){return noticeMapper.findByTitle(title);}
+    public Map<String,BigDecimal> sum(){return dayilyMapper.sum();};
 
-
-    public Notice findNewestNotice(){
-
-        return noticeMapper.findNewestNotice();};
-    public boolean deleteNotice(String title){return noticeMapper.deleteNotice(title);}
-
-
-
-
+    public List<Dayily> ShowAllDiary(){return dayilyMapper.ShowAllDiary();};
 
 }
