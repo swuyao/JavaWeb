@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pjb.springbootjjwt.mapper.DayilyMapper">
+
+    <!--返回今天的日常表-->
+    <select id="ShowTodayData" resultType="com.pjb.springbootjjwt.entity.Dayily">
+        select * from yc_dayily order by day DESC limit 1;
+    </select>
+
+
+    <!--更新早起日-->
+    <update id="UpdateUp" parameterType="com.pjb.springbootjjwt.entity.Dayily">
+        UPDATE yc_dayily
+        set up=#{up}
+        WHERE day=#{day};
+
+    </update>
+    <!--更新晚睡日-->
+    <update id="UpdateSleep" parameterType="com.pjb.springbootjjwt.entity.Dayily">
+        UPDATE yc_dayily
+        set sleep=#{sleep}
+        WHERE day=#{day};
+
+    </update>
+    <!--更新单词-->
+    <update id="UpdateEnglish" parameterType="com.pjb.springbootjjwt.entity.Dayily">
+        UPDATE yc_dayily
+        set English=#{English}
+        WHERE day=#{day};
+
+    </update>
+    <!--更新早起日-->
+    <update id="UpdateUp" parameterType="com.pjb.springbootjjwt.entity.Dayily">
+        UPDATE yc_dayily
+        set up=#{up}
+        WHERE day=#{day};
+
+    </update>
+    <!--更新早起日-->
+    <update id="UpdateUp" parameterType="com.pjb.springbootjjwt.entity.Dayily">
+        UPDATE yc_dayily
+        set up=#{up}
+        WHERE day=#{day};
+
+    </update>
+    <!--更新早起日-->
+    <update id="UpdateUp" parameterType="com.pjb.springbootjjwt.entity.Dayily">
+        UPDATE yc_dayily
+        set up=#{up}
+        WHERE day=#{day};
+
+    </update>
+    <!--更新早起日-->
+    <update id="UpdateUp" parameterType="com.pjb.springbootjjwt.entity.Dayily">
+        UPDATE yc_dayily
+        set up=#{up}
+        WHERE day=#{day};
+
+    </update>
+    <!--更新早起日-->
+    <update id="UpdateUp" parameterType="com.pjb.springbootjjwt.entity.Dayily">
+        UPDATE yc_dayily
+        set up=#{up}
+        WHERE day=#{day};
+
+    </update>
+    <!--更新早起日-->
+    <update id="UpdateUp" parameterType="com.pjb.springbootjjwt.entity.Dayily">
+        UPDATE yc_dayily
+        set up=#{up}
+        WHERE day=#{day};
+
+    </update>
+    <!--更新早起日-->
+    <update id="UpdateUp" parameterType="com.pjb.springbootjjwt.entity.Dayily">
+        UPDATE yc_dayily
+        set up=#{up}
+        WHERE day=#{day};
+
+    </update>
+    <!--更新早起日-->
+    <update id="UpdateUp" parameterType="com.pjb.springbootjjwt.entity.Dayily">
+        UPDATE yc_dayily
+        set up=#{up}
+        WHERE day=#{day};
+
+    </update>
+
+
+
+
+
+</mapper>
